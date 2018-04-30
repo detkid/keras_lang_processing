@@ -1,12 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
 
-URL = "http://www.nikkei.com/"
-
-resp = requests.get(URL)
+artist_url = "https://www.uta-net.com/artist/12550/"
+artist_page = requests.get(artist_url)
 
 # htmlをBeautifulSoupで扱う
-soup = BeautifulSoup(resp.text, "html.parser")
+soup = BeautifulSoup(artist_page.text, "html.parser")
 
 # タイトル要素を取得する → <title>経済、株価、ビジネス、政治のニュース:日経電子版</title>
 title_tag = soup.title
