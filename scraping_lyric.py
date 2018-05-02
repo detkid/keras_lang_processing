@@ -28,8 +28,8 @@ for song in song_url_list:
 
     lyrics.append(lyric_deleted_space)
 
-with open('nogizaka_lyric.txt', 'wb') as file:
-    pickle.dump(lyrics, file)
+with open('nogizaka_lyric.txt', 'w', encoding='utf-8') as file:
+    file.writelines(lyrics)
 
 # with open('nogizaka_lyric.txt', 'rb') as file:
 #     a = pickle.load(file)
