@@ -23,13 +23,15 @@ for song in song_url_list:
     song_lyric = ''
     for line in lyric:
         song_lyric = song_lyric + line
-    
-    lyrics.append(song_lyric)
 
-f = open('nogizaka_lyric.txt', 'wb')
+    lyric_deleted_space = song_lyric.replace('\u3000', ' ')
 
-pickle.dump(lyrics, f)
+    lyrics.append(lyric_deleted_space)
 
-# f = open('nogizaka_lyric.txt', 'rb')
+with open('nogizaka_lyric.txt', 'wb') as file:
+    pickle.dump(lyrics, file)
 
-# print(pickle.load(f))
+# with open('nogizaka_lyric.txt', 'rb') as file:
+#     a = pickle.load(file)
+
+print('end')
