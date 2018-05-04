@@ -4,7 +4,9 @@ import pickle
 
 basic_url = "https://www.uta-net.com"
 
-artist_url = "https://www.uta-net.com/artist/12550/"
+# 乃木坂 https://www.uta-net.com/artist/12550/
+# B'z https://www.uta-net.com/artist/134/ https://www.uta-net.com/artist/134/0/2/
+artist_url = "https://www.uta-net.com/artist/134/0/2/"
 artist_page = requests.get(artist_url)
 
 song_url_list = []
@@ -28,8 +30,8 @@ for song in song_url_list:
 
     lyrics.append(lyric_deleted_space)
 
-with open('nogizaka_lyric.txt', 'w', encoding='utf-8') as file:
-    file.writelines(lyrics)
+with open('Bz_lyric2.txt', 'w', encoding='utf-8') as file:
+    file.writelines("\n".join(lyrics))
 
 # with open('nogizaka_lyric.txt', 'rb') as file:
 #     a = pickle.load(file)
